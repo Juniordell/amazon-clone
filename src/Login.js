@@ -32,6 +32,7 @@ function Login() {
 
   return (
       <div className="login">
+
           <Link to='/'>
             <img className='login__logo' 
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png" 
@@ -39,8 +40,8 @@ function Login() {
           </Link>
 
           <div className="login__container">
-              <h1>Sign-in</h1>
-              <form action="">
+              <h1>Sign-In</h1>
+              <form>
                   <h5>E-mail</h5>
                   <input value={email} onChange={event => setEmail(event.target.value)} type="email" />
                   <h5>Password</h5>
@@ -49,11 +50,21 @@ function Login() {
               </form>
 
               <p>
-                By signing-in you agree to Amazon's Conditions of Use & Sale.
-                Please see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
+                By continuing, you agree to Amazon's <span>Conditions of Use</span>  and <span>Privacy Notice</span> .
               </p>
-              <button onClick={register} className='login__registerButton' >Create your Amazon Account</button>
+
+              <div className='help-container'>
+                <i class="fas fa-caret-right"></i>
+                <span className='help'>Need help?</span>
+              </div>
+     
           </div>
+          
+          <div className='register'>
+            <span> <h5>New to Amazon?</h5> </span>
+            <button onClick={register} className='login__registerButton' >Create your Amazon Account</button>
+          </div>
+          
       </div>
   );
 }

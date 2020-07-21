@@ -1,9 +1,15 @@
+@font-face {
+    font-family: "Amazon Ember";
+    src: url('./AmazonEmberRegular.ttf');
+}
+
 .login {
     background-color: white;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family:"Amazon Ember", Arial, sans-serif;
 }
 
 .login__container {
@@ -13,10 +19,12 @@
     flex-direction: column;
     padding: 20px;
     border: 1px solid lightgray;
+    border-radius: 4px;
 }
 
 .login__container > h1 {
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
@@ -29,11 +37,44 @@
     margin-bottom: 10px;
     background-color: white;
     width: 98%;
+    outline: none;
+    border: 1px solid #a6a6a6;
+    border-top-color: #949494;
+    border-radius: 3px;
+}
+
+.login__container > form > input:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
 }
 
 .login__container > p {
     margin-top: 15px;
     font-size: 12px;
+}
+
+.login__container p span {
+    color: #0066c0;
+    cursor: pointer;
+}
+
+.help-container {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.help-container i {
+    color: #767676;
+    margin-bottom: 1px;
+}
+
+.help {
+    font-size: 13px;
+    color: #0066c0;
+    margin-left: 7px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .login__logo {
@@ -43,20 +84,80 @@
 }
 
 .login__signInButton {
-    background-color: #f0c14b;
     border-radius: 2px;
     width: 100%;
+    cursor: pointer;
     height: 30px;
     border: 1px solid;
     margin-top: 10px;
+    outline: none;
+    background: #f0c14b;
     border-color: #a88734 #9c7e31 #846a29;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+}
+
+.register span {
+    margin: 20px 0 5px;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.register span h5 {
+    font-size: 12px;
+    position: relative;
+    color: #767676;
+    font-weight: 400;
+    z-index: 2;
+    display: inline-block;
+    background-color: #fff;
+    padding: 0 8px 0 7px;
+}
+
+.register > span::after {
+    content: "";
+    width: 100%;
+    display: block;
+    height: 1px;
+    border-top: 1px solid #e7e7e7;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    z-index: 1;
 }
 
 .login__registerButton {
     border-radius: 2px;
     width: 100%;
     height: 30px;
+    cursor: pointer;
     border: 1px solid;
     margin-top: 10px;
     border-color: darkgray;
+    color: #111;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    outline: none;
+}
+
+.login__container p span:hover, .help:hover {
+    text-decoration: underline;
+    color: #e77600;
+}
+
+.login__signInButton:focus, .login__registerButton:focus {
+    border-color: #e77600;
+}
+
+.login__signInButton:hover {
+    background: #e0b23c;
+
+}
+
+.login__registerButton:hover {
+    background-color: #dfe6eb;
 }

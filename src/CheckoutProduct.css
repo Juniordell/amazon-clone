@@ -1,6 +1,8 @@
 .checkoutProduct {
     display: flex;
     margin: 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DDD;
 }
 
 .checkoutProduct__image {
@@ -22,7 +24,7 @@
     display: flex;
 }
 
-.checkoutProduct > button {
+.checkoutProduct__info > button {
     background-color: #f0c14b;
     border: 1px solid;
     margin-top: 10px;
