@@ -35,5 +35,17 @@
 .product > button {
     background-color: #f0c14b;
     border: 1px solid;
+    outline: none;
+    cursor: pointer;
     border-color: #a88734 #9c7e31 #846a29;
+}
+
+.product > button:hover {
+    background-color: #dbb34e;
+}
+
+@media (max-width: 700px) {
+    .product {
+        width: auto;
+    }
 }

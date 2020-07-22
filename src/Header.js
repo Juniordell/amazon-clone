@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css'
 import { Link } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search'
@@ -8,6 +8,22 @@ import { auth } from './firebase'
 
 function Header() {
     const [{ basket, user }] = useStateValue()
+    const [name, setName] = useState('')
+
+    useEffect(() => {
+        console.log(name)
+        let newName = ''
+        if (user !== null && user.email) {
+            for (let letter of user.email) {
+                if (letter === '@') {
+                    break
+                }
+                newName += letter
+            }
+        }
+        setName(newName)
+        console.log(newName)
+    }, [name, user])
 
     const login = () => {
         if (user) {
@@ -19,7 +35,7 @@ function Header() {
         <nav className='header'>
 
             <Link to='/'>
-            <img className='header__logo' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt='Amazon Logo' />
+                <img className='header__logo' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt='Amazon Logo' />
             </Link>
 
             <div className='header__search'>
@@ -31,7 +47,7 @@ function Header() {
 
                 <Link to={!user && '/login'} className='header__link'>
                     <div onClick={login} className='header__option'>
-                        <span className='header__optionLineOne'>Hello, { user !== null && user.email }{ user === null && 'Sign in' }</span>
+                        <span className='header__optionLineOne'>Hello, { user !== null && name }{ user === null && 'Sign in' }</span>
                         <span className='header__optionLineTwo'>Account & Lists</span>
                     </div>
                 </Link>

@@ -62,7 +62,7 @@ function Login() {
           
           <div className='register'>
             <span> <h5>New to Amazon?</h5> </span>
-            <button onClick={register} className='login__registerButton' >Create your Amazon Account</button>
+            <button onClick={register} className='login__registerButton'>Create your Amazon Account</button>
           </div>
           
       </div>

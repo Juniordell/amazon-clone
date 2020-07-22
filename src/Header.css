@@ -74,3 +74,28 @@
 .header__searchInput:enabled {
     outline-color: #fc9700;
 }
+
+.header__option:hover, .header__optionBasket:hover, .header__logo:hover {
+    
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .header__search {
+        display: flex;
+        flex: 1;
+        width: 300px;
+    }
+
+    .header__nav {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .header__optionLineOne {
+        text-align: center;
+    }
+}
