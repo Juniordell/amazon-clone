@@ -14,6 +14,9 @@ $ yarn install
 $ yarn start
 ```
 
+## Demo 
+![GIF](https://media2.giphy.com/media/h8CG93XgqWdm4SCTeZ/giphy.gif)
+
 ## Technologies
 * React JS
 * Material UI
